@@ -4,8 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 import javax.swing.*;
+import java.net.URL;
 import java.util.ArrayList;
 
 @Entity
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Tool {
     private static Integer ID = 1;
     private String name;
-    private Icon img;
+    private URL img;
     private String description;
     @OneToOne
     private Brand brand;
@@ -34,11 +34,11 @@ public class Tool {
         this.name = name;
     }
 
-    public Icon getImg() {
+    public URL getImg() {
         return img;
     }
 
-    public void setImg(Icon img) {
+    public void setImg(URL img) {
         this.img = img;
     }
 
@@ -86,7 +86,7 @@ public class Tool {
         ID++;
     }
 
-    public Tool(String name, Icon img, String description, Brand brand, double price, ArrayList<String> cities, Integer quantity) {
+    public Tool(String name, URL img, String description, Brand brand, double price, ArrayList<String> cities, Integer quantity) {
         this.name = name;
         this.img = img;
         this.description = description;
