@@ -1,15 +1,24 @@
 package com.example.demo.Entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "tools")
 public class Tool {
     private static Integer ID = 1;
     private String name;
     private Icon img;
     private String description;
+    @OneToOne
     private Brand brand;
     private double price;
+    @OneToMany
     private ArrayList<String> cities;
     private Integer quantity;
 

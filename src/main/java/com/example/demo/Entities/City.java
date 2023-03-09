@@ -1,5 +1,10 @@
 package com.example.demo.Entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "cities")
 public class City {
 
     private static Integer ID = 1;

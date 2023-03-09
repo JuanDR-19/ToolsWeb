@@ -1,7 +1,13 @@
 package com.example.demo.Entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 import java.net.URL;
 
+
+@Entity
+@Table(name = "brands")
 public class Brand {
     private static Integer ID= 1;
     private String name;
