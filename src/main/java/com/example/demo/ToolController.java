@@ -8,21 +8,21 @@ import java.util.ArrayList;
 @RestController
 public class ToolController {
     @Autowired
-    ArrayList<Tool> tools;
+    ToolService tools;
 
     @Autowired
-    ArrayList<Brand> brands;
+    BrandService brands;
 
     @GetMapping(value="/all")
     public ArrayList<Tool> getAll(){
-        return tools;
+        return (ArrayList<Tool>) tools.getRepo().findAll();
     }
 
 
 
     @PostMapping(value="/NewTool")
     public void NewTool(@RequestBody Tool tool){
-
+        tools.InsertNewTool(tool);
     }
 
 
