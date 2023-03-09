@@ -1,7 +1,11 @@
-package com.example.demo;
+package com.example.demo.Services;
 
+import com.example.demo.Entities.Tool;
+import com.example.demo.Repositories.ToolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 @Service
 public class ToolService {
@@ -20,5 +24,8 @@ public class ToolService {
         Repo.save(T);
     }
 
+    public ArrayList<Tool> SearchAll(){
+        return (ArrayList<Tool>) Repo.findAll();
+    }
 
 }

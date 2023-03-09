@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example.demo.Repositories;
 
+import com.example.demo.Entities.Brand;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

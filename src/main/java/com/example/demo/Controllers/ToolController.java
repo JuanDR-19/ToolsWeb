@@ -1,8 +1,11 @@
-package com.example.demo;
+package com.example.demo.Controllers;
+import com.example.demo.Entities.Brand;
+import com.example.demo.Services.BrandService;
+import com.example.demo.Entities.Tool;
+import com.example.demo.Services.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 @RestController
@@ -10,12 +13,11 @@ public class ToolController {
     @Autowired
     ToolService tools;
 
-    @Autowired
-    BrandService brands;
+
 
     @GetMapping(value="/all")
     public ArrayList<Tool> getAll(){
-        return (ArrayList<Tool>) tools.getRepo().findAll();
+        return (ArrayList<Tool>) tools.SearchAll();
     }
 
 
@@ -24,6 +26,8 @@ public class ToolController {
     public void NewTool(@RequestBody Tool tool){
         tools.InsertNewTool(tool);
     }
+
+
 
 
 }
