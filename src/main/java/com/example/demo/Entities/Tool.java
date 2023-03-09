@@ -1,9 +1,7 @@
 package com.example.demo.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import javax.swing.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -11,6 +9,7 @@ import java.util.ArrayList;
 @Entity
 @Table(name = "tools")
 public class Tool {
+    @Id
     private static Integer ID = 1;
     private String name;
     private URL img;
@@ -19,7 +18,7 @@ public class Tool {
     private Brand brand;
     private double price;
     @OneToMany
-    private ArrayList<String> cities;
+    private ArrayList<City> cities;
     private Integer quantity;
 
     public Integer getnextID(){
@@ -66,11 +65,11 @@ public class Tool {
         this.price = price;
     }
 
-    public ArrayList<String> getCities() {
+    public ArrayList<City> getCities() {
         return cities;
     }
 
-    public void setCities(ArrayList<String> cities) {
+    public void setCities(ArrayList<City> cities) {
         this.cities = cities;
     }
 
@@ -86,7 +85,7 @@ public class Tool {
         ID++;
     }
 
-    public Tool(String name, URL img, String description, Brand brand, double price, ArrayList<String> cities, Integer quantity) {
+    public Tool(String name, URL img, String description, Brand brand, double price, ArrayList<City> cities, Integer quantity) {
         this.name = name;
         this.img = img;
         this.description = description;

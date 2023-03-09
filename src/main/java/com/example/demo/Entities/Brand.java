@@ -1,6 +1,7 @@
 package com.example.demo.Entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.net.URL;
@@ -9,6 +10,8 @@ import java.net.URL;
 @Entity
 @Table(name = "brands")
 public class Brand {
+
+    @Id
     private static Integer ID= 1;
     private String name;
     private URL website;
