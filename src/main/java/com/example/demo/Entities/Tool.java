@@ -15,7 +15,7 @@ public class Tool {
     private String name;
     private URL img;
     private String description;
-    @OneToOne
+    @ManyToOne
     private Brand brand;
     private double price;
     @ElementCollection
