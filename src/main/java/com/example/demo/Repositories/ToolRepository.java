@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public interface ToolRepository extends JpaRepository<Tool, Integer> {
 
     @Modifying //update
-    @Query("UPDATE Tool t SET t.name = :name, t.img = :img, t.description = :description, t.brand = :brand, t.price = :price, t.cities = :cities, t.quantity = :quantity WHERE t.id = :id")
+    @Query("UPDATE Tool t SET t.name = :name, t.img = :img, t.description = :description, t.brand = :brand, t.price = :price, t.cities = :cities, t.quantity = :quantity WHERE t.ID = :id")
     void actualizarTool(@Param("name") String name, @Param("img") URL img, @Param("description") String description, @Param("brand") Brand brand, @Param("price") double price, @Param("cities") ArrayList<City> cities, @Param("quantity") Integer quantity, @Param("id") Integer id);
     ArrayList<Tool> findAll();
 }
