@@ -20,4 +20,8 @@ public class BrandService {
     public ArrayList<Brand> SearchAll(){
         return (ArrayList<com.example.demo.Entities.Brand>) Brand.findAll();
     }
+
+    public void deleteBrand(Integer ID){
+        Brand.deleteById(ID);
+    }
 }

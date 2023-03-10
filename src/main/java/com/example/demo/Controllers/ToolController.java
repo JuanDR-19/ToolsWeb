@@ -34,5 +34,10 @@ public class ToolController {
         tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand(),tool.getPrice(),tool.getCities(),tool.getQuantity(), id);
     }
 
+    @DeleteMapping(value="/deleteTool/{ID}")
+    public void deleteTool(@PathVariable Integer ID){
+        tools.deleteTool(ID);
+    }
+
 
 }

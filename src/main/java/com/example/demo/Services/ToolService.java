@@ -35,4 +35,8 @@ public class ToolService {
         Repo.actualizarTool(name,img,description,brand,price,cities,quantity,id);
     }
 
+    public void deleteTool(Integer ID){
+        Repo.deleteById(ID);
+    }
+
 }

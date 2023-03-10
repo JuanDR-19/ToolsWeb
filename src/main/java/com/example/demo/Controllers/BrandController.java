@@ -5,10 +5,7 @@ import com.example.demo.Entities.City;
 import com.example.demo.Services.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -25,5 +22,10 @@ public class BrandController {
     @PostMapping(value="/NewBrand")
     public void NewBrand(@RequestBody Brand brand){
         brands.InsertNewBrand(brand);
+    }
+
+    @DeleteMapping(value="/deleteBrand/{ID}")
+    public void deleteBrand(@PathVariable Integer ID){
+        brands.deleteBrand(ID);
     }
 }

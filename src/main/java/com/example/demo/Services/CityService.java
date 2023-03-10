@@ -26,6 +26,10 @@ public class CityService {
     }
 
     public void updateCity(String name,Integer id){
-        Repo.updateCity(name,id);
+        //Repo.updateCity(name,id);
+    }
+
+    public void deleteCity(Integer ID){
+        Repo.deleteById(ID);
     }
 }
