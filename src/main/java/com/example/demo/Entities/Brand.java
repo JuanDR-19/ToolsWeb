@@ -1,8 +1,6 @@
 package com.example.demo.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.net.URL;
 
@@ -12,7 +10,8 @@ import java.net.URL;
 public class Brand {
 
     @Id
-    private static Integer ID= 1;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer ID;
     private String name;
     private URL website;
 
@@ -37,12 +36,10 @@ public class Brand {
     }
 
     public Brand() {
-        ID++;
     }
 
     public Brand(String name, URL website) {
         this.name = name;
         this.website = website;
-        ID++;
     }
 }

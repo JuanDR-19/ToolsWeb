@@ -15,9 +15,9 @@ public class ToolController {
 
 
 
-    @GetMapping(value="/all")
+    @GetMapping(value="/alltools")
     public ArrayList<Tool> getAll(){
-        return (ArrayList<Tool>) tools.SearchAll();
+        return tools.SearchAll();
     }
 
 
@@ -27,7 +27,10 @@ public class ToolController {
         tools.InsertNewTool(tool);
     }
 
-
+    @PutMapping(value="/updatetool")
+    public void updateTool(@RequestBody Tool tool){
+        tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand(),tool.getPrice(),tool.getCities(),tool.getQuantity(), tool.getnextID());
+    }
 
 
 }

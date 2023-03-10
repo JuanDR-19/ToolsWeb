@@ -1,23 +1,18 @@
 package com.example.demo.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "cities")
 public class City {
 
     @Id
-    private static Integer ID = 1;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer ID;
     private String name;
 
-    public static Integer getID() {
+    public Integer getID() {
         return ID;
-    }
-
-    public static void setID(Integer ID) {
-        City.ID = ID;
     }
 
     public String getName() {

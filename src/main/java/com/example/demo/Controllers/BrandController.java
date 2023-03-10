@@ -17,7 +17,7 @@ public class BrandController {
 
     @Autowired
     BrandService brands;
-    @GetMapping(value="/all")
+    @GetMapping(value="/allbrands")
     public ArrayList<Brand> getAll(){
         return (ArrayList<Brand>) brands.SearchAll();
     }

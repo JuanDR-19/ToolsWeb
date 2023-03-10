@@ -20,7 +20,7 @@ public class CityController {
 
 
 
-    @GetMapping(value="/all")
+    @GetMapping(value="/allcities")
     public ArrayList<City> getAll(){
         return (ArrayList<City>) city.SearchAll();
     }

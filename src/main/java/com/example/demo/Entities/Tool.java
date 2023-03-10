@@ -10,14 +10,15 @@ import java.util.ArrayList;
 @Table(name = "tools")
 public class Tool {
     @Id
-    private static Integer ID = 1;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer ID;
     private String name;
     private URL img;
     private String description;
     @OneToOne
     private Brand brand;
     private double price;
-    @OneToMany
+    @ElementCollection
     private ArrayList<City> cities;
     private Integer quantity;
 
@@ -82,7 +83,6 @@ public class Tool {
     }
 
     public Tool() {
-        ID++;
     }
 
     public Tool(String name, URL img, String description, Brand brand, double price, ArrayList<City> cities, Integer quantity) {
@@ -93,6 +93,5 @@ public class Tool {
         this.price = price;
         this.cities = cities;
         this.quantity = quantity;
-        ID++;
     }
 }
