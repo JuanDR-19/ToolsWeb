@@ -25,7 +25,7 @@ public class CityService {
 
     }
 
-    public void updateCity(String name){
-        Repo.updateCity(name);
+    public void updateCity(String name,Integer id){
+        Repo.updateCity(name,id);
     }
 }

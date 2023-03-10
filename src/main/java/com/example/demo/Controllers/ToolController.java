@@ -4,8 +4,10 @@ import com.example.demo.Services.BrandService;
 import com.example.demo.Entities.Tool;
 import com.example.demo.Services.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 @RestController
@@ -15,7 +17,7 @@ public class ToolController {
 
 
 
-    @GetMapping(value="/alltools")
+    @GetMapping(value="/alltools", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ArrayList<Tool> getAll(){
         return tools.SearchAll();
     }
@@ -27,9 +29,9 @@ public class ToolController {
         tools.InsertNewTool(tool);
     }
 
-    @PutMapping(value="/updatetool")
-    public void updateTool(@RequestBody Tool tool){
-        tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand(),tool.getPrice(),tool.getCities(),tool.getQuantity(), tool.getnextID());
+    @PutMapping(value="/updatetool/{id}")
+    public void updateTool(@RequestBody Tool tool,@PathVariable Integer id){
+        tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand(),tool.getPrice(),tool.getCities(),tool.getQuantity(), id);
     }
 
 

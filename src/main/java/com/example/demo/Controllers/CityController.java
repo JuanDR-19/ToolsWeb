@@ -5,6 +5,7 @@ import com.example.demo.Entities.Tool;
 import com.example.demo.Services.CityService;
 import com.example.demo.Services.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class CityController {
 
 
 
-    @GetMapping(value="/allcities")
+    @GetMapping(value="/allcities", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ArrayList<City> getAll(){
         return (ArrayList<City>) city.SearchAll();
     }
@@ -28,9 +29,9 @@ public class CityController {
         city.InsertNewTool(city1);
     }
 
-    @PutMapping(value="/updateCity")
-    public void updateCity(@RequestBody String name){
-        city.updateCity(name);
+    @PutMapping(value="/updateCity/{id}")
+    public void updateCity(@RequestBody String name,@PathVariable Integer id){
+        city.updateCity(name,id);
     }
 
 }
