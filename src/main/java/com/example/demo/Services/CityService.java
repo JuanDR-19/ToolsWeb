@@ -24,4 +24,8 @@ public class CityService {
     public void Put(City c){
 
     }
+
+    public void updateCity(String name){
+        Repo.updateCity(name);
+    }
 }

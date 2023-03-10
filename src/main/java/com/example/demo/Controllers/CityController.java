@@ -6,10 +6,7 @@ import com.example.demo.Services.CityService;
 import com.example.demo.Services.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -26,10 +23,14 @@ public class CityController {
     }
 
 
-
     @PostMapping(value="/NewCity")
     public void NewCity(@RequestBody City city1){
         city.InsertNewTool(city1);
+    }
+
+    @PutMapping(value="/updateCity")
+    public void updateCity(@RequestBody String name){
+        city.updateCity(name);
     }
 
 }
