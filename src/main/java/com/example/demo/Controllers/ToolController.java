@@ -12,14 +12,10 @@ public class ToolController {
     @Autowired
     ToolService tools;
 
-
-
-    @GetMapping(value="/alltools", produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value="/get_tools", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ArrayList<Tool> getAll(){
         return tools.SearchAll();
     }
-
-
 
     @PostMapping(value="/NewTool")
     public void NewTool(@RequestBody Tool tool){

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ToolService {
@@ -31,7 +32,7 @@ public class ToolService {
         return (ArrayList<Tool>) Repo.findAll();
     }
 
-    public void updateTool(String name, String img, String description, Brand brand, double price, ArrayList<City> cities, Integer quantity, Integer id){
+    public void updateTool(String name, String img, String description, Brand brand, double price, List<City> cities, Integer quantity, Integer id){
         //Repo.actualizarTool(name,img,description,brand,price,cities,quantity,id);
     }
 
