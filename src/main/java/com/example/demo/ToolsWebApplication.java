@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan("com.example.demo.*")
+@ComponentScan("com.example.demo.Entities")
 //@EntityScan("com.example.demo.Entities")
-//@EnableJpaRepositories({"com.example.demo.Repositories"})
+@EnableJpaRepositories({"com.example.demo.Repositories"})
 public class ToolsWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ToolsWebApplication.class, args);

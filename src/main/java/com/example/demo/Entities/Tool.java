@@ -1,7 +1,7 @@
 package com.example.demo.Entities;
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class Tool implements Serializable {
     private Brand brand;
     private double price;
     @OneToMany
-    private City cities;
+    private ArrayList<City> cities;
     private Integer quantity;
 
 
