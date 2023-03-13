@@ -1,6 +1,6 @@
 package com.example.demo.Entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.net.URL;
 
@@ -36,6 +36,10 @@ public class Brand {
     }
 
     public Brand() {
+    }
+
+    public void setID(Integer ID) {
+        this.ID = ID;
     }
 
     public Brand(String name, URL website) {

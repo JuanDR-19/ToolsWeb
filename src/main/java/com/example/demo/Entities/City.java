@@ -1,6 +1,5 @@
 package com.example.demo.Entities;
-
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "cities")
@@ -13,6 +12,10 @@ public class City {
 
     public Integer getID() {
         return ID;
+    }
+
+    public void setID(Integer ID) {
+        this.ID = ID;
     }
 
     public String getName() {

@@ -1,8 +1,5 @@
 package com.example.demo.Entities;
-
-import jakarta.persistence.*;
-
-import javax.swing.*;
+import javax.persistence.*;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -22,8 +19,12 @@ public class Tool {
     private ArrayList<City> cities;
     private Integer quantity;
 
-    public Integer getnextID(){
+    public Integer getID(){
         return ID;
+    }
+
+    public void setID(Integer ID) {
+        this.ID = ID;
     }
 
     public String getName() {

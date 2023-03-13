@@ -32,7 +32,7 @@ public class ToolService {
     }
 
     public void updateTool(String name, URL img, String description, Brand brand, double price, ArrayList<City> cities, Integer quantity, Integer id){
-        Repo.actualizarTool(name,img,description,brand,price,cities,quantity,id);
+        //Repo.actualizarTool(name,img,description,brand,price,cities,quantity,id);
     }
 
     public void deleteTool(Integer ID){
