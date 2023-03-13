@@ -21,7 +21,7 @@ public class CityService {
     }
 
     public void Put(City c){
-
+        Repo.save(c);
     }
 
     public void updateCity(String name,Integer id){

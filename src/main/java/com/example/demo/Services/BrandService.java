@@ -13,7 +13,7 @@ public class BrandService {
     @Autowired
     BrandRepository brand;
 
-    public void InsertNewBrand(com.example.demo.Entities.Brand B){
+    public void InsertNewBrand(Brand B){
         brand.save(B);
     }
 
