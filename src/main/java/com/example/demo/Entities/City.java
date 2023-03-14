@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -13,4 +14,7 @@ public class City implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer city_id;
     private String name;
+
+    @ManyToMany(mappedBy = "cities")
+    private List<Tool> availability;
 }

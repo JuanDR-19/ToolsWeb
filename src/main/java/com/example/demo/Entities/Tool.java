@@ -20,13 +20,16 @@ public class Tool implements Serializable {
     @JoinColumn(name = "brand_id")
     private Brand brand_id;
     private double price;
+
     @ManyToMany
-    @JoinTable(
-            name = "tool_city",
-            joinColumns = @JoinColumn(name = "tool_id"),
-            inverseJoinColumns = @JoinColumn(name = "city_id")
-    )
-    private ArrayList<City> city_id;
+    private List<City> cities;
+
+    //@ManyToMany
+    //@JoinTable(
+    //        name = "tool_city",
+    //        joinColumns = @JoinColumn(name = "tool_id"),
+    //        inverseJoinColumns = @JoinColumn(name = "city_id")
+    //
     private Integer quantity;
 
 }
