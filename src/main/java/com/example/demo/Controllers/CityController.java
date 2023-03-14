@@ -21,7 +21,7 @@ public class CityController {
 
     @PostMapping(value="/NewCity")
     public void NewCity(@RequestBody City city1){
-        city.InsertNewTool(city1);
+        city.Put(city1);
     }
 
     @PutMapping(value="/updateCity/{id}")

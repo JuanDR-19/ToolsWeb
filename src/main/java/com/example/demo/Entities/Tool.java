@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tools")
 @Data
 public class Tool implements Serializable {
     @Id
@@ -18,11 +17,10 @@ public class Tool implements Serializable {
     private String img;
     private String description;
     @ManyToOne
-    private Brand brand;
+    private Brand brand_id;
     private double price;
     @OneToMany
-    private ArrayList<City> cities;
+    private ArrayList<City> city_id;
     private Integer quantity;
-
 
 }

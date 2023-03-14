@@ -4,16 +4,15 @@ import lombok.Data;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 
 @Entity
-@Table(name = "brands")
 @Data
 public class  Brand implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer brand_id;
     private String name;
     private String website;
-
 }

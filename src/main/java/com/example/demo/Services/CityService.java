@@ -12,10 +12,6 @@ public class CityService {
     @Autowired
     CityRepository Repo;
 
-    public void InsertNewTool(City c){
-        Repo.save(c);
-    }
-
     public ArrayList<City> SearchAll(){
         return (ArrayList<City>) Repo.findAll();
     }
