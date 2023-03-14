@@ -88,6 +88,37 @@
 			"response": []
 		},
 		{
+			"name": "UPDATEBRAND",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATECITY",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Bogotá"
+				},
+				"url": {
+					"raw": "localhost:8080/updateCity/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateCity",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "NEWTOOL",
 			"request": {
 				"method": "POST",
@@ -109,6 +140,60 @@
 					"port": "8080",
 					"path": [
 						"NewTool"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NEWBRAND",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"bosch\",\r\n    \"website\": \"https://www.bosch.com/\"   \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/NewBrand",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"NewBrand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NEWCITY",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\": \"Bucaramanga\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/NewCity",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"NewCity"
 					]
 				}
 			},
