@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @Data
 public class  Brand implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer brand_id;
     private String name;
     private String website;

@@ -21,7 +21,7 @@ public class BrandService {
         return (ArrayList<com.example.demo.Entities.Brand>) brand.findAll();
     }
 
-    public void deleteBrand(Integer ID){
+    public void deleteBrand(Integer ID) {
         brand.deleteById(ID);
     }
 }
