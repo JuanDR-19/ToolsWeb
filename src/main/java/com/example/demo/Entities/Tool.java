@@ -17,6 +17,7 @@ public class Tool implements Serializable {
     private String img;
     private String description;
     @ManyToOne
+    @JoinColumn(name = "brand_id")
     private Brand brand_id;
     private double price;
     @OneToMany
