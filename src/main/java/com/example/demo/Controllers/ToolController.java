@@ -1,4 +1,5 @@
 package com.example.demo.Controllers;
+import com.example.demo.Entities.City;
 import com.example.demo.Entities.Tool;
 import com.example.demo.Services.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class ToolController {
 
     @PutMapping(value="/updatetool/{id}")
     public void updateTool(@RequestBody Tool tool,@PathVariable Integer id){
-        tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand_id(),tool.getPrice(),tool.getCities(),tool.getQuantity(), id);
+        //tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand_id(),tool.getPrice(), (ArrayList<City>) tool.getCities(),tool.getQuantity(), id);
     }
 
     @DeleteMapping(value="/deleteTool/{ID}")
