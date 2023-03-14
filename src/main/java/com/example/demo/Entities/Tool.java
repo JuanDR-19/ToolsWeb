@@ -20,7 +20,7 @@ public class Tool implements Serializable {
     @JoinColumn(name = "brand_id")
     private Brand brand_id;
     private double price;
-    @OneToMany
+    @ManyToMany(mappedBy = "tool")
     private ArrayList<City> city_id;
     private Integer quantity;
 
