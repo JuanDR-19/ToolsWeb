@@ -8,9 +8,19 @@
 	"item": [
 		{
 			"name": "GETTOOLS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "",
+						"variables": ""
+					}
+				},
 				"url": {
 					"raw": "localhost:8080/get_tools",
 					"host": [
@@ -67,7 +77,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Tool\":{\r\n        \"quantity\": 600,\r\n        \"name\": \"serrucho\",\r\n        \"description\": \"sirve para serruchar\",\r\n        \"city\": 2,\r\n        \"price\": 30000,\r\n        \"brand\": 1,\r\n        \"img\": \"https://co.stanleytools.global/LAG/PRODUCT/IMAGES/HIRES/15-470/15-470_2.jpg?resize=530x530\"\r\n    }\r\n}\r\n",
+					"raw": "{\r\n    \"Tool\":{\r\n        \"quantity\": 600,\r\n        \"name\": \"serrucho\",\r\n        \"description\": \"sirve para serruchar\",\r\n        \"city\":  [{\"city_id\": 2, \"name\": \"bogota\"}],\r\n        \"price\": 30000,\r\n        \"brand\": 1,\r\n        \"img\": \"https://co.stanleytools.global/LAG/PRODUCT/IMAGES/HIRES/15-470/15-470_2.jpg?resize=530x530\"\r\n    }\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,7 +112,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "Bogotá"
+					"raw": "Barrancabermeja"
 				},
 				"url": {
 					"raw": "localhost:8080/updateCity/1",
@@ -125,7 +135,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Tool\":{\r\n        \"quantity\": 600,\r\n        \"name\": \"martillo\",\r\n        \"description\": \"sirve para martillar\",\r\n        \"city\": 2,\r\n        \"price\": 30000,\r\n        \"brand\": 1,\r\n        \"img\": \"https://adamimages.sbdinc.com/GEM/Stanley/1000x1000_144r/STHT51392-40_1.jpg\"\r\n    }\r\n}\r\n",
+					"raw": "{\r\n    \"quantity\": 600,\r\n    \"name\": \"martillo\",\r\n    \"description\": \"sirve para martillar\",\r\n    \"cities\": [{\"city_id\": 1, \"name\": \"cali\"}],\r\n    \"price\": 30000,\r\n    \"brand_id\": {\"brand_id\":1, \"name\":\"Truper\", \"website\":\"https://www.truper.com/\"}, \r\n    \"img\": \"https://adamimages.sbdinc.com/GEM/Stanley/1000x1000_144r/STHT51392-40_1.jpg\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -152,7 +162,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"bosch\",\r\n    \"website\": \"https://www.bosch.com/\"   \r\n}\r\n",
+					"raw": "{\r\n    \"name\": \"Brand y\",\r\n    \"website\": \"http://www.brandy.com\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -179,7 +189,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\r\n    \"name\": \"Bucaramanga\"\r\n    \r\n}",
+					"raw": "{\r\n    \"name\": \"Barrancabermeja\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -224,14 +234,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/deleteCity/1",
+					"raw": "localhost:8080/deleteCity/4",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"deleteCity",
-						"1"
+						"4"
 					]
 				}
 			},
@@ -243,14 +253,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/deleteBrand/1",
+					"raw": "localhost:8080/deleteBrand/3",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"deleteBrand",
-						"1"
+						"3"
 					]
 				}
 			},
