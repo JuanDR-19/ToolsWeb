@@ -13,7 +13,7 @@ public class BrandController {
 
     @Autowired
     BrandService brands;
-    @GetMapping(value="/allbrands",, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value="/allbrands", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ArrayList<Brand> getAll(){
         return brands.SearchAll();
     }
