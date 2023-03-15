@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c0e0b867-f355-493e-90cc-551d40dbce12",
+		"_postman_id": "e29d75aa-af7f-413b-8306-681a1ef1440d",
 		"name": "Web",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26277424"
+		"_exporter_id": "21190709"
 	},
 	"item": [
 		{
@@ -15,11 +15,8 @@
 				"method": "GET",
 				"header": [],
 				"body": {
-					"mode": "graphql",
-					"graphql": {
-						"query": "",
-						"variables": ""
-					}
+					"mode": "raw",
+					"raw": ""
 				},
 				"url": {
 					"raw": "localhost:8080/get_tools",
@@ -77,7 +74,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Tool\":{\r\n        \"quantity\": 600,\r\n        \"name\": \"serrucho\",\r\n        \"description\": \"sirve para serruchar\",\r\n        \"city\":  [{\"city_id\": 2, \"name\": \"bogota\"}],\r\n        \"price\": 30000,\r\n        \"brand\": 1,\r\n        \"img\": \"https://co.stanleytools.global/LAG/PRODUCT/IMAGES/HIRES/15-470/15-470_2.jpg?resize=530x530\"\r\n    }\r\n}\r\n",
+					"raw": "{\r\n    \"quantity\": 19,\r\n    \"name\": \"Hombre solo\",\r\n    \"description\": \"sirve para hombre solear\",\r\n    \"cities\": [{\"city_id\": 1, \"name\": \"cali\"}],\r\n    \"price\": 19000,\r\n    \"brand_id\": {\"brand_id\":1, \"name\":\"Truper\", \"website\":\"https://www.truper.com/\"}, \r\n    \"img\": \"https://adamimages.sbdinc.com/GEM/Stanley/1000x1000_144r/STHT51392-40_1.jpg\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -85,13 +82,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/updatetool",
+					"raw": "localhost:8080/updatetool/6",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"updatetool"
+						"updatetool",
+						"6"
 					]
 				}
 			},
@@ -101,7 +99,27 @@
 			"name": "UPDATEBRAND",
 			"request": {
 				"method": "PUT",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Brand petunia\",\r\n    \"website\": \"http://www.brandpetunia.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/Updatebrand/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Updatebrand",
+						"3"
+					]
+				}
 			},
 			"response": []
 		},
@@ -112,7 +130,12 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "Barrancabermeja"
+					"raw": "{\r\n    \"name\": \"Zipaquira\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "localhost:8080/updateCity/1",
