@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 
 public interface CityRepository extends JpaRepository<City, Integer> {
 
-    //@Query("UPDATE cities t SET t.name = :name where t.city_id = :id")
-    //void updateCity(@Param("name") String name, @Param("id") Integer id);
 }

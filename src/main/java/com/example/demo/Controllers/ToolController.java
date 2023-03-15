@@ -23,9 +23,22 @@ public class ToolController {
         tools.InsertNewTool(tool);
     }
 
-    @PutMapping(value="/updatetool/{id}")
-    public void updateTool(@RequestBody Tool tool,@PathVariable Integer id){
-        //tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand_id(),tool.getPrice(),(ArrayList<City>)tool.getCities(),tool.getQuantity(), id);
+    @PutMapping(value="/updatetool/{id}",produces = {MediaType.APPLICATION_JSON_VALUE})
+    public String updateTool(@RequestBody Tool tool,@PathVariable Integer id){
+        Tool x = tools.findOne(id);
+
+        if (x!=null){
+            x.setName(tool.getName());
+            x.setImg(tool.getImg());
+            x.setCities(tool.getCities());
+            x.setBrand_id(tool.getBrand_id());
+            x.setDescription(tool.getDescription());
+
+            tools.updateTool(x);
+            return "Fue un exito";
+        }else{
+            return "Esa herramienta no existe";
+        }
     }
 
     @DeleteMapping(value="/deleteTool/{ID}")

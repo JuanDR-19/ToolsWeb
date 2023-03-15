@@ -24,9 +24,18 @@ public class CityController {
         city.Put(city1);
     }
 
-    @PutMapping(value="/updateCity/{id}")
-    public void updateCity(@RequestBody String name,@PathVariable Integer id){
-        //city.updateCity(name,id);
+    @PutMapping(value="/updateCity/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public String updateCity(@RequestBody City c,@PathVariable Integer id){
+        City x = city.findOne(id);
+        if (x!=null){
+            x.setName(c.getName());
+            x.setAvailability(c.getAvailability());
+            city.updateCity(x);
+            return "Exito";
+        }else{
+            return "Esta ciudad no existe";
+        }
+
     }
 
     @DeleteMapping(value="/deleteCity/{ID}")

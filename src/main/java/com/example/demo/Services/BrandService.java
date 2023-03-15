@@ -17,11 +17,23 @@ public class BrandService {
         brand.save(B);
     }
 
+    public void UpdateBrand(Brand b){
+        brand.save(b);
+    }
+
     public ArrayList<Brand> SearchAll(){
         return (ArrayList<com.example.demo.Entities.Brand>) brand.findAll();
     }
 
     public void deleteBrand(Integer ID) {
         brand.deleteById(ID);
+    }
+
+    public Brand findOne(Integer ID){
+        if (brand.existsById(ID)){
+            return brand.getReferenceById(ID);
+        }else{
+            return null;
+        }
     }
 }

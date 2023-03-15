@@ -31,12 +31,19 @@ public class ToolService {
         return (ArrayList<Tool>) Repo.findAll();
     }
 
-    public void updateTool(String name, String img, String description, Brand brand, double price, ArrayList<City> cities, Integer quantity, Integer id){
-        //Repo.actualizarTool(name,img,description,brand,price,cities,quantity,id);
+    public void updateTool(Tool t){
+        Repo.save(t);
     }
 
     public void deleteTool(Integer ID){
         Repo.deleteById(ID);
+    }
+
+    public Tool findOne(Integer ID){
+        if(Repo.existsById(ID)){
+            return Repo.getReferenceById(ID);
+        }
+        return null;
     }
 
 }
