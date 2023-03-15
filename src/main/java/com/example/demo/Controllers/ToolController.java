@@ -33,6 +33,8 @@ public class ToolController {
             x.setCities(tool.getCities());
             x.setBrand_id(tool.getBrand_id());
             x.setDescription(tool.getDescription());
+            x.setPrice(tool.getPrice());
+            x.setQuantity(tool.getQuantity());
 
             tools.updateTool(x);
             return "Fue un exito";
