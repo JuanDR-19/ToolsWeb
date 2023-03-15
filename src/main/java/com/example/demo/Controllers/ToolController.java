@@ -25,7 +25,7 @@ public class ToolController {
 
     @PutMapping(value="/updatetool/{id}")
     public void updateTool(@RequestBody Tool tool,@PathVariable Integer id){
-        //tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand_id(),tool.getPrice(), (ArrayList<City>) tool.getCities(),tool.getQuantity(), id);
+        //tools.updateTool(tool.getName(),tool.getImg(),tool.getDescription(),tool.getBrand_id(),tool.getPrice(),(ArrayList<City>)tool.getCities(),tool.getQuantity(), id);
     }
 
     @DeleteMapping(value="/deleteTool/{ID}")
