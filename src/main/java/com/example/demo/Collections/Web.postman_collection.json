@@ -12,13 +12,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/alltools",
+					"raw": "localhost:8080/get_tools",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"alltools"
+						"get_tools"
 					]
 				}
 			},
