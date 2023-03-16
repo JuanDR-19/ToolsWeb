@@ -55,7 +55,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/allbrands",
+					"raw": "localhost:8080/allbrands" ,
 					"host": [
 						"localhost"
 					],
