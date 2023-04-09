@@ -55,7 +55,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/allbrands" ,
+					"raw": "localhost:8080/allbrands",
 					"host": [
 						"localhost"
 					],
@@ -130,7 +130,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Zipaquira\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Yopal\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -138,14 +138,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/updateCity/1",
+					"raw": "localhost:8080/updateCity/5",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"updateCity",
-						"1"
+						"5"
 					]
 				}
 			},
@@ -257,14 +257,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/deleteCity/4",
+					"raw": "localhost:8080/deleteCity/53",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"deleteCity",
-						"4"
+						"53"
 					]
 				}
 			},
