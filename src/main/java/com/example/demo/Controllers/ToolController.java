@@ -14,6 +14,7 @@ public class ToolController {
     ToolService tools;
 
     @GetMapping(value="/get_tools", produces = {MediaType.APPLICATION_JSON_VALUE})
+    @CrossOrigin(origins = "http://localhost:4200")
     public ArrayList<Tool> getAll(){
         return tools.SearchAll();
     }
