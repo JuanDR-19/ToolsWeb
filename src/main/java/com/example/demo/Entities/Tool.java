@@ -22,12 +22,6 @@ public class Tool implements Serializable {
     @ManyToMany
     private List<City> cities;
 
-    //@ManyToMany
-    //@JoinTable(
-    //        name = "tool_city",
-    //        joinColumns = @JoinColumn(name = "tool_id"),
-    //        inverseJoinColumns = @JoinColumn(name = "city_id")
-    //
     private Integer quantity;
 
 }
