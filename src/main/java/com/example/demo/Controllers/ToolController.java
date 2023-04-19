@@ -40,7 +40,8 @@ public class ToolController {
             tools.updateTool(x);
             return "Fue un exito";
         }else{
-            return "Esa herramienta no existe";
+            tools.InsertNewTool(tool);
+            return "Herramienta agregada";
         }
     }
 
