@@ -36,7 +36,7 @@ public class CityService {
 
     /**
      * metodo que modifica la informacion de una ciudad
-     * @param c
+     * @param c - ciudad a modificar
      */
     public void updateCity(City c){
         Repo.save(c);
