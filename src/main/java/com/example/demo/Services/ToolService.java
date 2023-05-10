@@ -2,6 +2,8 @@ package com.example.demo.Services;
 import com.example.demo.Entities.Tool;
 import com.example.demo.Repositories.ToolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -33,6 +35,10 @@ public class ToolService {
      */
     public ArrayList<Tool> SearchAll(){
         return (ArrayList<Tool>) Repo.findAll();
+    }
+
+    public Page<Tool> toolsPages(Pageable pageable){
+        return Repo.findAll(pageable);
     }
 
     /**

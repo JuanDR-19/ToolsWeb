@@ -3,7 +3,12 @@ package com.example.demo.Controllers;
 import com.example.demo.Entities.Tool;
 import com.example.demo.Services.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -27,6 +32,21 @@ public class ToolController {
     @CrossOrigin(origins = "http://localhost:4200")
     public ArrayList<Tool> getAll(){
         return tools.SearchAll();
+    }
+
+    @GetMapping(value="/get_tools_paginated")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<Page<Tool>> pages(
+            @RequestParam(defaultValue = "0") int page,//numero de pagina que se quiere traer al front
+            @RequestParam(defaultValue = "6") int size,//tamaño de las paginas
+            @RequestParam(defaultValue = "id") String order, //orden
+            @RequestParam(defaultValue = "true") boolean asc//orden ascendente
+    ) {
+        Page<Tool> toolspages = tools.toolsPages(PageRequest.of(page, size, Sort.by(order)));
+        if(!asc){
+            toolspages = tools.toolsPages(PageRequest.of(page, size, Sort.by(order).descending()));
+        }
+        return new ResponseEntity<Page<Tool>>(toolspages, HttpStatus.OK) ;
     }
 
     /**
