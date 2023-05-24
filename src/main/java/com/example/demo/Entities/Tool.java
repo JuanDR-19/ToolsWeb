@@ -55,4 +55,6 @@ public class Tool implements Serializable {
      */
     private Integer quantity;
 
+    private boolean activo;
+
 }

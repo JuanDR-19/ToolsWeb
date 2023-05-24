@@ -4,6 +4,7 @@ import com.example.demo.Entities.Tool;
 import com.example.demo.Services.ToolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Clase que controla los servicios del servicio de herramientas
@@ -31,7 +33,17 @@ public class ToolController {
     @GetMapping(value="/get_tools", produces = {MediaType.APPLICATION_JSON_VALUE})
     @CrossOrigin(origins = "http://localhost:4200")
     public ArrayList<Tool> getAll(){
-        return tools.SearchAll();
+
+        ArrayList<Tool> allTools = tools.SearchAll();
+        ArrayList<Tool> activeTools = new ArrayList<>();
+
+        for (Tool tool : allTools) {
+            if (tool.isActivo()) {
+                activeTools.add(tool);
+            }
+        }
+
+        return activeTools;
     }
 
     @GetMapping(value="/get_tools_paginated")
@@ -43,10 +55,17 @@ public class ToolController {
             @RequestParam(defaultValue = "true") boolean asc//orden ascendente
     ) {
         Page<Tool> toolspages = tools.toolsPages(PageRequest.of(page, size, Sort.by(order)));
-        if(!asc){
+        if (!asc) {
             toolspages = tools.toolsPages(PageRequest.of(page, size, Sort.by(order).descending()));
         }
-        return new ResponseEntity<Page<Tool>>(toolspages, HttpStatus.OK) ;
+
+        ArrayList<Tool> activeTools = toolspages.getContent().stream()
+                .filter(Tool::isActivo)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        Page<Tool> activeToolspages = new PageImpl<>(activeTools, toolspages.getPageable(), activeTools.size());
+
+        return new ResponseEntity<>(activeToolspages, HttpStatus.OK);
     }
 
     /**
@@ -76,6 +95,7 @@ public class ToolController {
             x.setDescription(tool.getDescription());
             x.setPrice(tool.getPrice());
             x.setQuantity(tool.getQuantity());
+            x.setActivo(tool.isActivo());
 
             tools.updateTool(x);
             return "Fue un exito";
@@ -90,8 +110,14 @@ public class ToolController {
      * @param ID - identificador de la herramienta a eliminar
      */
     @DeleteMapping(value="/deleteTool/{ID}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public void deleteTool(@PathVariable Integer ID){
-        tools.deleteTool(ID);
+
+        Tool toolToDelete = tools.findOne(ID);
+        if (toolToDelete != null) {
+            toolToDelete.setActivo(false);
+            tools.updateTool(toolToDelete);
+        }
     }
 
 
