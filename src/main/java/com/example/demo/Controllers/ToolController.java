@@ -73,6 +73,7 @@ public class ToolController {
      * @param tool - Herramienta a insertar en el sistema
      */
     @PostMapping(value="/NewTool")
+    @CrossOrigin(origins = "http://localhost:4200")
     public void NewTool(@RequestBody Tool tool){
         tools.InsertNewTool(tool);
     }
@@ -84,6 +85,7 @@ public class ToolController {
      * @return string - mensaje de exito del metodo o de insertar una nueva herramienta
      */
     @PutMapping(value="/updatetool/{id}",produces = {MediaType.APPLICATION_JSON_VALUE})
+    @CrossOrigin(origins = "http://localhost:4200")
     public String updateTool(@RequestBody Tool tool,@PathVariable Integer id){
         Tool x = tools.findOne(id);
 
