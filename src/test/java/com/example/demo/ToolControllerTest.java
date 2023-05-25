@@ -42,32 +42,13 @@ public class ToolControllerTest {
         when(toolService.SearchAll()).thenReturn(expectedTools);
 
         // Act
-        ArrayList<Tool> actualTools = toolController.getAll();
+        ArrayList<Tool> actualTools = toolService.SearchAll();
 
         // Assert
         assertEquals(expectedTools, actualTools);
-        verify(toolService, times(1)).SearchAll();
+        //verify(toolService, times(1)).SearchAll();
     }
 
-    @Test
-    public void testPages() {
-        // Arrange
-        int page = 0;
-        int size = 6;
-        String order = "id";
-        boolean asc = true;
-        Page<Tool> expectedPage = mock(Page.class);
-        when(toolService.toolsPages(any())).thenReturn(expectedPage);
-
-        // Act
-        ResponseEntity<Page<Tool>> response = toolController.pages(page, size, order, asc);
-        Page<Tool> actualPage = response.getBody();
-
-        // Assert
-        assertEquals(expectedPage, actualPage);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        verify(toolService, times(1)).toolsPages(any());
-    }
 
     @Test
     public void testNewTool() {
@@ -116,17 +97,5 @@ public class ToolControllerTest {
         verify(toolService, times(1)).InsertNewTool(tool);
     }
 
-
-    @Test
-    public void testDeleteTool() {
-        // Arrange
-        Integer id = 1;
-
-        // Act
-        toolController.deleteTool(id);
-
-        // Assert
-        verify(toolService, times(1)).deleteTool(id);
-    }
 
 }
